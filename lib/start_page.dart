@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const BackgroundColor = Color(0xff54494b);
+const backgroundColor = Color(0xff54494b);
 
 class StartPage extends StatelessWidget {
   const StartPage({super.key});
@@ -10,7 +10,7 @@ class StartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: BackgroundColor,
+      color: backgroundColor,
       child: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -31,8 +31,21 @@ class StartPage extends StatelessWidget {
               ),
             ),
             ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xff91c7b1),
+                padding: const EdgeInsets.symmetric(
+                  vertical: 12.0,
+                  horizontal: 20.00,
+                ),
+              ),
               onPressed: onStartQuiz,
-              child: const Text('Start Quiz'),
+              child: const Text(
+                'Start Quiz',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             )
           ],
         ),
