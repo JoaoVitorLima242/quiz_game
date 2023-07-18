@@ -27,21 +27,24 @@ class StartScreen extends StatelessWidget {
               ),
             ),
           ),
-          ElevatedButton.icon(
-            style: ElevatedButton.styleFrom(
-              backgroundColor: const Color(0xff91c7b1),
-              padding: const EdgeInsets.symmetric(
-                vertical: 12.0,
-                horizontal: 20.00,
+          Directionality(
+            textDirection: TextDirection.rtl,
+            child: ElevatedButton.icon(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xff91c7b1),
+                padding: const EdgeInsets.symmetric(
+                  vertical: 12.0,
+                  horizontal: 20.00,
+                ),
               ),
-            ),
-            onPressed: startQuiz,
-            icon: const Icon(Icons.arrow_right_alt),
-            label: const Text(
-              'Start Quiz',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
+              onPressed: startQuiz,
+              icon: const Icon(Icons.arrow_right_alt),
+              label: const Text(
+                'Start Quiz',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
           )
