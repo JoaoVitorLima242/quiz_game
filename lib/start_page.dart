@@ -5,9 +5,12 @@ class StartPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Column(
-        children: [Text('Starting')],
+    return Container(
+      color: Colors.cyan,
+      child: const Center(
+        child: Column(
+          children: [Text('Starting')],
+        ),
       ),
     );
   }
