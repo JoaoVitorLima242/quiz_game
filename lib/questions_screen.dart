@@ -24,6 +24,14 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            Image.asset(
+              'images/quiz-logo.png',
+              height: 200,
+              color: const Color.fromARGB(150, 255, 255, 255),
+            ),
+            const SizedBox(
+              height: 40,
+            ),
             Text(
               currentQuestion.text,
               textAlign: TextAlign.center,

@@ -14,7 +14,7 @@ class StartScreen extends StatelessWidget {
           Image.asset(
             'images/quiz-logo.png',
             width: 300,
-            color: const Color.fromARGB(130, 255, 255, 255),
+            color: const Color.fromARGB(150, 255, 255, 255),
           ),
           const Padding(
             padding: EdgeInsets.only(top: 50, bottom: 30),
