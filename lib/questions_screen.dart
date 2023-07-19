@@ -26,6 +26,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
           children: [
             Text(
               currentQuestion.text,
+              textAlign: TextAlign.center,
               style: const TextStyle(
                 color: Colors.white,
               ),
