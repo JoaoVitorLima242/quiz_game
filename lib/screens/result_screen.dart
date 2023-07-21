@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_game/custom_widgets/Custom_icon_button.dart';
 import 'package:quiz_game/custom_widgets/custom_text.dart';
 import 'package:quiz_game/data/questions.dart';
 
@@ -18,6 +19,11 @@ class ResultScreen extends StatelessWidget {
           ),
           const SizedBox(height: 30),
           const SizedBox(height: 30),
+          CustomIconButton(
+            icon: const Icon(Icons.replay_outlined),
+            label: "Restart Quiz",
+            onPressed: () {},
+          )
         ],
       ),
     );
