@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_game/data/questions.dart';
 import 'package:quiz_game/screens/questions_screen.dart';
+import 'package:quiz_game/screens/result_screen.dart';
 import 'package:quiz_game/screens/start_screen.dart';
 
 const backgroundColor = Color(0xff54494b);
@@ -37,11 +38,9 @@ class _QuizState extends State<Quiz> {
 
     if (selectedAnswer.length == questions.length) {
       setState(() {
-        activeScreen = StartScreen(switchScreen);
+        activeScreen = ResultScreen();
       });
-      selectedAnswer.clear();
     }
-    print(selectedAnswer);
   }
 
   @override
@@ -50,7 +49,10 @@ class _QuizState extends State<Quiz> {
       home: Scaffold(
         body: Container(
           color: backgroundColor,
-          child: activeScreen,
+          child: Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: activeScreen,
+          ),
         ),
       ),
     );
