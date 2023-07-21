@@ -6,10 +6,12 @@ import 'package:quiz_game/data/questions.dart';
 class ResultScreen extends StatelessWidget {
   ResultScreen({
     required this.onRestartQuiz,
+    required this.chosenAnswer,
     super.key,
   });
 
   final void Function() onRestartQuiz;
+  final List<String> chosenAnswer;
   final questionsLength = questions.length;
 
   @override

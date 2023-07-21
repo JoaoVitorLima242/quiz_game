@@ -40,6 +40,7 @@ class _QuizState extends State<Quiz> {
       setState(() {
         activeScreen = ResultScreen(
           onRestartQuiz: restartQuiz,
+          chosenAnswer: selectedAnswer,
         );
       });
     }
