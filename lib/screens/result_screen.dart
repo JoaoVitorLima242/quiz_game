@@ -4,8 +4,12 @@ import 'package:quiz_game/custom_widgets/custom_text.dart';
 import 'package:quiz_game/data/questions.dart';
 
 class ResultScreen extends StatelessWidget {
-  ResultScreen({super.key});
+  ResultScreen({
+    required this.onRestartQuiz,
+    super.key,
+  });
 
+  final void Function() onRestartQuiz;
   final questionsLength = questions.length;
 
   @override
@@ -22,7 +26,7 @@ class ResultScreen extends StatelessWidget {
           CustomIconButton(
             icon: const Icon(Icons.replay_outlined),
             label: "Restart Quiz",
-            onPressed: () {},
+            onPressed: onRestartQuiz,
           )
         ],
       ),
