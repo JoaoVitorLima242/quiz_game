@@ -39,7 +39,9 @@ class _QuizState extends State<Quiz> {
       setState(() {
         activeScreen = StartScreen(switchScreen);
       });
+      selectedAnswer.clear();
     }
+    print(selectedAnswer);
   }
 
   @override
