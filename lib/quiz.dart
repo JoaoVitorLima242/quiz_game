@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_game/data/questions.dart';
-import 'package:quiz_game/questions_screen.dart';
-import 'package:quiz_game/start_screen.dart';
+import 'package:quiz_game/screens/questions_screen.dart';
+import 'package:quiz_game/screens/start_screen.dart';
 
 const backgroundColor = Color(0xff54494b);
 
