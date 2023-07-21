@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_game/custom_widgets/Custom_icon_button.dart';
 import 'package:quiz_game/custom_widgets/custom_text.dart';
+import 'package:quiz_game/custom_widgets/result_card.dart';
 import 'package:quiz_game/data/questions.dart';
+import 'package:quiz_game/models/result.dart';
 
 class ResultScreen extends StatelessWidget {
   ResultScreen({
     required this.onRestartQuiz,
-    required this.chosenAnswer,
+    required this.results,
     super.key,
   });
 
   final void Function() onRestartQuiz;
-  final List<String> chosenAnswer;
+  final List<Result> results;
+
   final questionsLength = questions.length;
 
   @override
@@ -24,6 +27,14 @@ class ResultScreen extends StatelessWidget {
             'You answered X out $questionsLength questions correctly!',
           ),
           const SizedBox(height: 30),
+          ...results.map(
+            (result) => ResultCard(
+              orderNumber: result.orderNumber,
+              questionText: result.question,
+              selectedAnswer: result.chosenAnswer,
+              rightAnswer: result.rightAnswer,
+            ),
+          ),
           const SizedBox(height: 30),
           CustomIconButton(
             icon: const Icon(Icons.replay_outlined),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_game/data/questions.dart';
+import 'package:quiz_game/models/result.dart';
 import 'package:quiz_game/screens/questions_screen.dart';
 import 'package:quiz_game/screens/result_screen.dart';
 import 'package:quiz_game/screens/start_screen.dart';
@@ -40,7 +41,7 @@ class _QuizState extends State<Quiz> {
       setState(() {
         activeScreen = ResultScreen(
           onRestartQuiz: restartQuiz,
-          chosenAnswer: selectedAnswer,
+          results: getFormattedResults(selectedAnswer, questions),
         );
       });
     }

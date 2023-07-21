@@ -20,8 +20,13 @@ class ResultCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: containerBackground,
-      child: const Row(
-        children: [],
+      child: Row(
+        children: [
+          Text(orderNumber.toString()),
+          Text(questionText),
+          Text(selectedAnswer),
+          Text(rightAnswer),
+        ],
       ),
     );
   }
