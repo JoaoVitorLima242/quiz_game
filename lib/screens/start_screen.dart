@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_game/logo_image.dart';
+import 'package:quiz_game/custom_widgets/custom_text.dart';
+import 'package:quiz_game/custom_widgets/logo_image.dart';
 
 class StartScreen extends StatelessWidget {
   const StartScreen(this.startQuiz, {super.key});
@@ -15,13 +16,9 @@ class StartScreen extends StatelessWidget {
           const LogoImage(height: 300),
           const Padding(
             padding: EdgeInsets.only(top: 50, bottom: 30),
-            child: Text(
+            child: CustomText(
               'Learn Flutter the fun way!',
-              style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.w700,
-                fontSize: 26,
-              ),
+              fontSize: 26,
             ),
           ),
           Directionality(
@@ -36,15 +33,11 @@ class StartScreen extends StatelessWidget {
               ),
               onPressed: startQuiz,
               icon: const Icon(Icons.arrow_right_alt),
-              label: const Text(
+              label: const CustomText(
                 'Start Quiz',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
               ),
             ),
-          )
+          ),
         ],
       ),
     );
