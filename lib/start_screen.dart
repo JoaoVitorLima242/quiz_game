@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_game/logo_image.dart';
 
 class StartScreen extends StatelessWidget {
   const StartScreen(this.startQuiz, {super.key});
@@ -11,11 +12,7 @@ class StartScreen extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Image.asset(
-            'images/quiz-logo.png',
-            width: 300,
-            color: const Color.fromARGB(150, 255, 255, 255),
-          ),
+          const LogoImage(height: 300),
           const Padding(
             padding: EdgeInsets.only(top: 50, bottom: 30),
             child: Text(

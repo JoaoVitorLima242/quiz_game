@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_game/answer_button.dart';
 import 'package:quiz_game/data/questions.dart';
+import 'package:quiz_game/logo_image.dart';
 
 class QuestionsScreen extends StatefulWidget {
   const QuestionsScreen({super.key});
@@ -32,11 +33,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Image.asset(
-              'images/quiz-logo.png',
-              height: 200,
-              color: const Color.fromARGB(150, 255, 255, 255),
-            ),
+            const LogoImage(),
             const SizedBox(
               height: 40,
             ),
@@ -44,8 +41,9 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
               currentQuestion.text,
               textAlign: TextAlign.center,
               style: const TextStyle(
-                color: Colors.white,
-              ),
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w700),
             ),
             const SizedBox(height: 30),
             ...currentQuestion.getShuffledAnswers().map(
