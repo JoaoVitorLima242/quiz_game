@@ -19,13 +19,22 @@ class ResultCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: containerBackground,
+      padding: const EdgeInsets.all(8),
+      margin: const EdgeInsets.all(8),
+      decoration: const BoxDecoration(
+        color: containerBackground,
+        borderRadius: BorderRadius.all(Radius.circular(6)),
+      ),
       child: Row(
         children: [
           Text(orderNumber.toString()),
-          Text(questionText),
-          Text(selectedAnswer),
-          Text(rightAnswer),
+          Column(
+            children: [
+              Text(questionText),
+              Text(selectedAnswer),
+              Text(rightAnswer),
+            ],
+          ),
         ],
       ),
     );
