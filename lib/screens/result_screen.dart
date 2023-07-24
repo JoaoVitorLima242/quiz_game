@@ -19,29 +19,34 @@ class ResultScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          CustomText(
-            'You answered X out $questionsLength questions correctly!',
+    return Container(
+      padding: const EdgeInsets.symmetric(vertical: 40),
+      child: Center(
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              CustomText(
+                'You answered X out $questionsLength questions correctly!',
+              ),
+              const SizedBox(height: 30),
+              ...results.map(
+                (result) => ResultCard(
+                  orderNumber: result.orderNumber,
+                  questionText: result.question,
+                  selectedAnswer: result.chosenAnswer,
+                  rightAnswer: result.rightAnswer,
+                ),
+              ),
+              const SizedBox(height: 30),
+              CustomIconButton(
+                icon: const Icon(Icons.replay_outlined),
+                label: "Restart Quiz",
+                onPressed: onRestartQuiz,
+              )
+            ],
           ),
-          const SizedBox(height: 30),
-          ...results.map(
-            (result) => ResultCard(
-              orderNumber: result.orderNumber,
-              questionText: result.question,
-              selectedAnswer: result.chosenAnswer,
-              rightAnswer: result.rightAnswer,
-            ),
-          ),
-          const SizedBox(height: 30),
-          CustomIconButton(
-            icon: const Icon(Icons.replay_outlined),
-            label: "Restart Quiz",
-            onPressed: onRestartQuiz,
-          )
-        ],
+        ),
       ),
     );
   }
