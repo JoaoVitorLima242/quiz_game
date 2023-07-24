@@ -17,8 +17,22 @@ class ResultScreen extends StatelessWidget {
 
   final questionsLength = questions.length;
 
+  int getNumberOfRightAnswer() {
+    int count = 0;
+
+    for (final Result item in results) {
+      if (item.rightAnswer == item.chosenAnswer) {
+        count++;
+      }
+    }
+
+    return count;
+  }
+
   @override
   Widget build(BuildContext context) {
+    final numberOfRightAnswer = getNumberOfRightAnswer();
+
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 40),
       child: Center(
@@ -26,8 +40,11 @@ class ResultScreen extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
+              const SizedBox(
+                height: 40,
+              ),
               CustomText(
-                'You answered X out $questionsLength questions correctly!',
+                'You answered $numberOfRightAnswer out $questionsLength questions correctly!',
               ),
               const SizedBox(height: 30),
               ...results.map(
