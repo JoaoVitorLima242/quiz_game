@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quiz_game/custom_widgets/number_cicle.dart';
 
 const containerBackground = Color(0xfff1f7ed);
-const rightColor = Color.fromARGB(255, 57, 207, 147);
+const rightColor = Color(0xFF3FBB89);
 const wrongColor = Color(0xffB33951);
 
 class ResultCard extends StatelessWidget {
@@ -35,12 +35,37 @@ class ResultCard extends StatelessWidget {
             color: formattedRightColor,
             text: orderNumber.toString(),
           ),
-          Column(
-            children: [
-              Text(questionText),
-              Text(selectedAnswer),
-              Text(rightAnswer),
-            ],
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  questionText,
+                  style: TextStyle(
+                    color: formattedRightColor,
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(
+                  height: 12,
+                ),
+                Text(
+                  selectedAnswer,
+                  style: const TextStyle(
+                    color: Color(0xff54494B),
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                Text(
+                  rightAnswer,
+                  style: const TextStyle(
+                    color: rightColor,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ],
+            ),
           ),
         ],
       ),
