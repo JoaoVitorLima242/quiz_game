@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_game/custom_widgets/number_cicle.dart';
 
 const containerBackground = Color(0xfff1f7ed);
-const rightColor = Color.fromARGB(255, 36, 145, 101);
+const rightColor = Color.fromARGB(255, 57, 207, 147);
 const wrongColor = Color(0xffB33951);
 
 class ResultCard extends StatelessWidget {
@@ -18,7 +19,8 @@ class ResultCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bool isCorrectAnswer = rightAnswer == selectedAnswer;
+    final formattedRightColor =
+        rightAnswer == selectedAnswer ? rightColor : wrongColor;
 
     return Container(
       padding: const EdgeInsets.all(8),
@@ -29,7 +31,10 @@ class ResultCard extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Text(orderNumber.toString()),
+          NumberCicle(
+            color: formattedRightColor,
+            text: orderNumber.toString(),
+          ),
           Column(
             children: [
               Text(questionText),
